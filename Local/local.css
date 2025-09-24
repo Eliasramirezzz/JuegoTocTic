@@ -1,0 +1,280 @@
+/*Esto es un reset
+Su funcion es resetear un archivo html desde css para que su inicio sea el correcto, debido a que hay navegadores que ya tiene por defecto configuracione de css, entoces este resert es necesario para evitar multiples configuracones. */
+html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, variable, form, fieldset, blockquote{
+    padding: 0;
+    margin: 0;
+    font-size: 100%;
+    font-weight: normal;
+}
+table{ border-collapse: collapse; border-spacing: 0;}
+td, th, caption { font-weight: normal; text-align: left;}
+img, fieldset {border: 0;}
+ol { padding-left: 1.4em; list-style: decimal;}
+ul { padding-left: 1.4em; list-style: square;}
+q::before, q::after { content: '';}
+
+/*================================Diseño de header=======================*/
+.fondo_header{ /*Definir un fondo para el header*/
+    background-image: url(../Imagenes/Fondo_Header.png); /*Importo una imagen de fondo*/
+    background-size: cover; /*Me permite que se complete el header*/
+    background-position: center; /*Centra la Imagen*/
+    height: 100px;
+    animation: mover-fondo 8s ease-in-out infinite; /* Tiempo ajustado */
+}
+
+/* Animación para mover el fondo */
+@keyframes mover-fondo {
+    0%{background-position: 48% 48%; /* Posición inicial */}
+    25% {background-position: 50% 50%; /* Mueve un poco hacia la derecha y abajo */}
+    50% {background-position: 50% 55%; /* Mueve un poco hacia abajo y al centro */}
+    75% {background-position: 45% 50%; /* Mueve un poco hacia la izquierda */}
+    100% {background-position: 50% 45%; /* Regresa ligeramente arriba */}
+}
+
+.TOC_TIC{
+    position: relative;
+    font-size: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-100%);
+    animation: slideDown 1.5s ease-out forwards;
+    cursor: default;
+}
+
+@keyframes slideDown {
+    from {transform: translateY(-100%);}
+    to {transform: translateY(0);}
+}
+
+.Fondo_letras:hover{
+    font-size: 5rem;
+}
+
+header .letter {
+    animation-delay: calc(0.1s * var(--i));
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    animation: bounce 1s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0% {transform: translateY(0);}
+    50% {transform: translateY(-10px);}
+}
+
+.fondo_principal{
+    background-image: url(../Imagenes/Fondo_Principal.png);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    animation: mover-fondo 8s ease-in-out infinite; /* Tiempo ajustado */
+}
+
+/* Animación para mover el fondo */
+@keyframes mover-fondo {
+    0% {background-position: 48% 48%; /* Posición inicial */}
+    25% {background-position: 55% 50%; /* Mueve un poco hacia la derecha y abajo */}
+    50% {background-position: 50% 55%; /* Mueve un poco hacia abajo y al centro */}
+    75% {background-position: 45% 50%; /* Mueve un poco hacia la izquierda */}
+    100% {background-position: 50% 45%; /* Regresa ligeramente arriba */}
+}
+
+/*=======================Diseño del Juego============================*/
+.Contenedor_tablero{
+    padding: 40px 370px 10px;
+}
+
+.btn_fila1{
+    display: flex;
+    gap: 33%;
+    justify-content: left;
+    margin-bottom: 45px;
+}
+
+.btn_fila2{
+    display: flex;
+    gap: 33%;
+    justify-content: left;
+    margin-bottom: 55px;
+}
+
+.btn_fila3{
+    display: flex;
+    gap: 33%;
+    justify-content: right;
+    margin-bottom: 55px;
+}
+
+.btn_fila4{
+    display: flex;
+    gap: 33%;
+    justify-content: center;
+}
+
+/* Botón normal (estado inicial) */
+.btn_fila1 button,
+.btn_fila2 button,
+.btn_fila3 button,
+.btn_fila4 button {
+    background: white; /* Fondo blanco para botones no ocupados */
+    border-radius: 50px; /* Forma circular */
+    width: 70px;
+    height: 70px;
+    border: 2px solid black; /* Borde negro */
+    transition: all 0.3s ease; /* Transición suave para cambios */
+}
+
+/* Botones ocupados por el jugador azul */
+button.azul {
+    background: blue; /* Fondo azul */
+    color: white; /* Texto blanco */
+}
+
+/* Botones ocupados por el jugador rojo */
+button.rojo {
+    background: red; /* Fondo rojo */
+    color: white; /* Texto blanco */
+}
+
+/* Botón seleccionado */
+button.seleccionado {
+    border: 3px solid yellow; /* Borde amarillo */
+    box-shadow: 0px 0px 10px 5px yellow; /* Efecto de resplandor */
+    transform: scale(1.1); /* Aumentar ligeramente el tamaño */
+}
+
+/* Botón deseleccionado (volver a estado normal) */
+button:not(.seleccionado) {
+    box-shadow: none; /* Elimina el resplandor */
+    transform: scale(1); /* Vuelve a su tamaño normal */
+}
+
+/* Botones disponibles (no ocupados por jugadores) */
+button:not(.azul):not(.rojo) {
+    background: white; /* Fondo blanco */
+    color: black; /* Texto negro */
+    border: 2px solid black; /* Borde negro estándar */
+}
+
+/* Estilo para botones libres */
+button.disponible:hover {
+    background-color: #ffff99; /* Amarillo claro */
+    cursor: pointer; /* Cambiar cursor */
+}
+
+
+#indicador-turno-con-cronometro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px auto;
+    padding: 10px;
+    border: 2px solid yellow;
+    border-radius: 10px;
+    background-color: green;
+    color: yellow;
+    max-width: 600px;
+}
+
+#cronometro {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+@font-face {
+    font-family: 'Letra_Turno';
+    src: url('../Data/LCD.ttf') format('truetype');
+}
+
+#cronometro{
+    font-family: "Letra_Turno";
+}
+
+#indicador-turno {
+    font-family: "Letra_Turno", sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+ /* Tablero de juego */
+#tablero {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Animaciones para los botones */
+.boton:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.boton.seleccionado {
+    animation: rebote 0.5s infinite alternate;
+    border-color: yellow;
+}
+
+/* Colores de botones */
+.azul {
+    background-color: blue;
+    color: white;
+}
+
+.rojo {
+    background-color: red;
+    color: white;
+}
+
+/* Animación para rebote */
+@keyframes rebote {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(-5px);}
+}
+
+/* Animación para el fondo dinámico */
+@keyframes fondo-dinamico {
+    0% {background: linear-gradient(90deg, #1e3c72, #2a5298);}
+    100% {background: linear-gradient(90deg, #16222a, #3a6073);}
+}
+
+/*Diseño del boton volver a inicio*/
+.btn_inicio {
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn_inicio button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.btn_inicio img {
+    transition: transform 0.3s ease;
+}
+
+/* Efecto al pasar el mouse */
+.btn_inicio button:hover img {
+    transform: scale(1.1); /* Agranda ligeramente el botón */
+}
+
+/* Efecto al presionar */
+.btn_inicio button:active img {
+    transform: scale(0.95); /* Reduce ligeramente el tamaño */
+}

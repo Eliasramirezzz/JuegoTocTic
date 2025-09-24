@@ -1,0 +1,150 @@
+html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, variable, form, fieldset, blockquote{
+    padding: 0;
+    margin: 0;
+    font-size: 100%;
+    font-weight: normal;
+}
+table{ border-collapse: collapse; border-spacing: 0;}
+td, th, caption { font-weight: normal; text-align: left;}
+img, fieldset {border: 0;}
+ol { padding-left: 1.4em; list-style: decimal;}
+ul { padding-left: 1.4em; list-style: square;}
+q::before, q::after { content: '';}
+
+@font-face {
+    font-family: 'letra_bienvenido';
+    src: url('./Data/Inkfree.ttf') format('truetype');
+}
+
+/*====================Fondo de la pagina====================*/
+.fondo_principal {
+    background-image: url("Imagenes/Fondo_Inicio.png");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Contenedor principal del texto */
+.fondo_principal div {
+    font-size: 5rem;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    animation: rebote 1.5s ease-out, movimiento-lateral 6s ease-in-out infinite;
+}
+
+/*====================Diseño de letras====================*/
+.Bienvenidos{
+    color: cyan;
+    font-family: "letra_bienvenido";
+    font-size: 50px;
+    text-shadow: 10px 10px 10px rgb(61, 245, 101);
+    cursor: default;
+}
+
+/* Estilo de cada letra */
+.fondo_principal span {
+    display: inline-block;
+    animation: color-cambio 3s infinite alternate, ola 2s ease-in-out infinite;
+    text-shadow: 3px 3px 5px rgb(85, 255, 43);
+    background: linear-gradient(45deg, red, blue, green);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: default;
+}
+
+/* Colores iniciales únicos para cada letra */
+.fondo_principal span:nth-child(1) { animation-delay: 0s; }
+.fondo_principal span:nth-child(2) { animation-delay: 0.2s; }
+.fondo_principal span:nth-child(3) { animation-delay: 0.4s; }
+.fondo_principal span:nth-child(5) { animation-delay: 0.6s; }
+.fondo_principal span:nth-child(6) { animation-delay: 0.8s; }
+.fondo_principal span:nth-child(7) { animation-delay: 1s; }
+
+/* Animación de rebote al iniciar */
+@keyframes rebote {
+    0% { transform: translateY(-100%); } /* Aparece desde arriba */
+    60% { transform: translateY(20px); } /* Rebota un poco hacia abajo */
+    80% { transform: translateY(-10px); } /* Rebota ligeramente hacia arriba */
+    100% { transform: translateY(0); } /* Se posiciona en el centro */
+}
+
+/* Animación de movimiento lateral lento */
+@keyframes movimiento-lateral {
+    0%, 100% { transform: translateX(-10px); } /* Se mueve ligeramente a la izquierda */
+    50% { transform: translateX(10px); } /* Se mueve ligeramente a la derecha */
+}
+
+/* Animación de cambio de color */
+@keyframes color-cambio {
+    0% { filter: hue-rotate(0deg); }
+    50% { filter: hue-rotate(180deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+/* Animación de ola */
+@keyframes ola {
+    0%, 100% { transform: scale(1); } /* Tamaño normal */
+    50% { transform: scale(1.2); } /* Agrandamiento temporal */
+}
+
+
+/*====================Diseño de los botones del Juego===================*/
+/*Botones de juegos*/
+.btn_juego button{
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.btn_juego img{
+    background:transparent;
+    margin-top: 50px;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto al pasar el mouse sobre el botón */
+.btn_juego button:hover img {
+    transform: rotate(5deg); /* Gira ligeramente hacia la derecha */
+}
+
+/* Efecto al presionar el botón */
+.btn_juego button:active {
+    transform: scale(1.1); /* Agranda el botón */
+    background-color: rgba(0, 0, 0, 0.7); /* Degradado oscuro */
+    border-radius: 10px; /* Opcional: añade bordes redondeados */
+}
+
+.btn_juego button:active img {
+    transform: scale(1.1) rotate(-5deg); /* Gira hacia la izquierda */
+}
+
+/*Boton descripcion del juego*/
+.como_se_juega{
+    background: transparent;
+    color: black;
+    border: transparent;
+    font-size: 40px;
+    text-shadow: 3px 3px 5px yellow;
+    cursor: pointer;
+}
+
+.como_se_juega:hover{
+    color: yellow;
+    text-shadow: 3px 3px 5px black;
+    font-size: 50px ;
+}
+
+
+
+
+
+
+
+

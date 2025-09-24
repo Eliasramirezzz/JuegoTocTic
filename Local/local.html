@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Juego Web Toc Tic">
+    <link rel="shortcut icon" href="../Imagenes/Icono_Toc_Tic.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../Local/local.css">
+    <link rel="stylesheet" href="../Local/local_responsil.css">
+    <link rel="stylesheet" href="../Local/modal_ganador.css">
+
+    <title>Tic Toc local</title>
+</head>
+<body>
+    <div class="modal-overlay" id="modal" style="display: none;">
+        <div class="modal-content">
+            <h1 id="winner-name" class="winner-name">
+                <span>F</span><span>E</span><span>L</span><span>I</span><span>C</span>
+                <span>I</span><span>D</span><span>A</span><span>D</span><span>E</span>
+                <span>S</span>
+            </h1>
+            <img src="../Imagenes/copa.png" alt="Trofeo">
+            <p>¡Felicidades! ¡Has ganado el juego!</p>
+            <button id="close-modal">Volver a Jugar</button>
+        </div>
+        <div class="modal-background"></div>
+    </div>
+
+    <header class="fondo_header TOC_TIC">
+        <div class="Fondo_letras">
+            <span style="--i:1;" class="letter"><strong>T</strong></span>
+            <span style="--i:2;" class="letter"><strong>O</strong></span>
+            <span style="--i:3;" class="letter"><strong>C</strong></span>
+            <span style="--i:4;" class="letter">_</span>
+            <span style="--i:5;" class="letter"><strong>T</strong></span>
+            <span style="--i:6;" class="letter"><strong>I</strong></span>
+            <span style="--i:7;" class="letter"><strong>C</strong></span>
+        </div>
+    </header>
+
+    <main>
+        <section class="fondo_principal">
+            <div class="Contenedor_tablero">
+                <!-- Tablero de botones -->
+                <div class="btn_fila1">
+                    <button id="btn1">*🥶*</button>
+                    <button id="btn2">*🥶*</button>
+                    <button id="btn3">*🥶*</button>
+                </div>
+                <div class="btn_fila2">
+                    <button id="btn4">🤖</button>
+                    <button id="btn5">🤖</button>
+                </div>
+                <div class="btn_fila3">
+                    <button id="btn6">🤖</button>
+                    <button id="btn7">🤖</button>
+                </div>
+                <div class="btn_fila4">
+                    <button id="btn8">*😡*</button>
+                    <button id="btn9">*😡*</button>
+                    <button id="btn10">*😡*</button>
+                </div>
+            </div>
+
+            <div id="indicador-turno-con-cronometro" 
+                style="display: flex; 
+                    justify-content: space-around; 
+                    align-items: center;">
+                <div id="cronometro">
+                    Tiempo: 30
+                </div>
+                <div id="indicador-turno">
+                    Turno: Jugador Azul
+                </div>
+            </div>
+            
+            <!-- Botón para deshacer movimiento -->
+            <div style="text-align: center; margin-top: 20px;">
+                <button id="deshacer" style="padding: 10px 20px; 
+                                            font-size: 1em;
+                                            background: yellow;
+                                            color: black;
+                                            cursor: pointer;">
+                <strong>Deshacer último movimiento</strong></button>
+
+                <button id="redistribuir" style="padding: 10px 20px; 
+                                            font-size: 1em;
+                                            background: yellow;
+                                            color: blue;
+                                            cursor: pointer;">
+                <strong>Volver a repartir</strong></button>
+            </div>
+
+            <div class="btn_inicio" > <!--Boton para volver al inicio-->
+                <button>
+                    <a href="../main.html">
+                        <img src="../Imagenes/btn_volver_inicio.png" width="300" alt="">
+                    </a>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <script src="../Local/local.js"></script>
+    <script src="../Local/cronometro_indicador.js"></script>
+
+</body>
+</html>

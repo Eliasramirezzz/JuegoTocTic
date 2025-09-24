@@ -1,0 +1,96 @@
+html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, variable, form, fieldset, blockquote{
+    padding: 0;
+    margin: 0;
+    font-size: 100%;
+    font-weight: normal;
+}
+table{ border-collapse: collapse; border-spacing: 0;}
+td, th, caption { font-weight: normal; text-align: left;}
+img, fieldset {border: 0;}
+ol { padding-left: 1.4em; list-style: decimal;}
+ul { padding-left: 1.4em; list-style: square;}
+q::before, q::after { content: '';}
+
+
+/* Diseño Responsivo para gama media*/
+@media  (max-width: 1080px) {
+    .fondo_header{
+        width: 100%;
+        height: 80px;
+    }
+    
+    .letter strong{
+        font-size: 2.5rem;
+    }
+
+    .TOC_TIC {
+        position: relative;
+        font-size: 4rem;/* Ajusta el tamaño en pantallas más pequeñas */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .fondo_principal{
+        background-image: url(../Imagenes/IMG_media.png);
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .Contenedor_tablero{
+        margin: 0px 20px;
+    }
+
+    .btn_fila1{
+        display: flex;
+        gap: 22%;
+        justify-content: left;
+        margin-bottom: 50px;
+    }
+
+    .btn_fila1 button{
+        margin-top: 50px;
+    }
+    
+    .btn_fila2{
+        display: flex;
+        gap: 18%;
+        justify-content: left;
+        margin-bottom: 50px;
+    }
+    
+    .btn_fila3{
+        display: flex;
+        gap: 75px;
+        justify-content: right;
+        margin-bottom: 50px;
+    }
+    
+    .btn_fila4{
+        display: flex;
+        gap: 22%;
+        justify-content: center;
+    }
+
+    .Contenedor_tablero{
+        padding: 0;
+    }
+
+    #tablero {
+        grid-template-columns: repeat(3, 1fr); /* Reduce columnas a 3 */
+    }
+
+    button {
+        font-size: 2vw; /* Ajusta tamaño del texto en botones */
+    }
+
+    .modal-content {
+        position: relative;
+        width: 700px; /* Aumenta el tamaño */
+        height: 400px; /* Aumenta el tamaño */
+    }
+}
+
+

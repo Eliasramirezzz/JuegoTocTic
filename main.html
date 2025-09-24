@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Juego Web Toc Tic">
+    <link rel="shortcut icon" href="Imagenes/Icono_Toc_Tic.ico" type="image/x-icon">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="modalExplicacion.css">
+    <title>Bienvenidos a ToC TiC</title>
+</head>
+<body>
+    <main>
+        <section class="fondo_principal"> <!--Imagen Toc Tic-->
+            <div>
+                <div>
+                    <h1 class="Bienvenidos"><strong>Bienvenidos a</strong></h1>
+                    <span>T</span>
+                    <span>O</span>
+                    <span>C</span>
+                    <Span></Span>
+                    <span>T</span>
+                    <span>I</span>
+                    <span>C</span>
+                </div>
+
+                <div class="btn_juego">
+                    <button>
+                        <a href="Local/local.html">
+                            <img src="Imagenes/btn_local.png" width="300" alt="local">
+                        </a>
+                    </button>
+
+                    <!-- No esta implementado en red wan
+                    <button>
+                        <a href="1vs1/servidor.html">
+                            <img src="Imagenes/btn_1vs1.png" width="300" alt="1vs1">
+                        </a>
+                    </button>-->
+
+                </div> 
+                <button id="openModalBtn" class="como_se_juega">¿Como se juega?</button>
+            </div>
+        </section>
+        
+        <div id="gameModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>¿Cómo se juega Toc Tic?</h2>
+                <div class="modal-body">
+                    <p>
+                        El juego <strong>Toc Tic</strong> es una versión digital y estratégica del tradicional tatetí, diseñado para dos jugadores. Su objetivo es simple: ser el primer jugador en completar una línea horizontal de tres fichas en tu propia área del tablero.
+                    </p>
+                    
+                    <h3>Inicio del juego</h3>
+                    <ul>
+                        <li>Al seleccionar la opción <strong>"Local"</strong>, el juego te pedirá los nombres de los dos jugadores: <strong>Jugador Azul</strong> y <strong>Jugador Rojo</strong>.</li>
+                        <li>Una vez ingresados, se mostrará el tablero de juego, listo para comenzar.</li>
+                    </ul>
+
+                    <h3>Reglas y movimientos</h3>
+                    <p>
+                        El juego se desarrolla en turnos alternos. Cada jugador debe mover una de sus fichas (círculos de su color) de un nodo a otro nodo que esté vacío.
+                    </p>
+                    <ul>
+                        <li><strong>Movimientos:</strong>Deben hacerse al nodo más cercano. No se pueden saltar posiciones.</li>
+                        <li><strong>Salto especial</strong>: Si un jugador se queda sin movimientos en su área, puede realizar un <strong>salto especial</strong> a través del nodo central hacia el área del oponente.</li>
+                        <li><strong>Validación:</strong> El sistema te avisará si intentas un movimiento no permitido.</li>
+                    </ul>
+
+                    <h3>Condición de victoria</h3>
+                    <p>
+                        Gana el jugador que logre alinear tres de sus fichas de forma horizontal en su área respectiva del tablero.
+                    </p>
+                    <ul>
+                        <li>El <strong>Jugador Azul</strong> solo gana formando la línea en el <strong>Área Azul</strong>.</li>
+                        <li>El <strong>Jugador Rojo</strong> solo gana formando la línea en el <strong>Área Roja</strong>.</li>
+                        <li>Las líneas formadas en el área contraria no cuentan para la victoria.</li>
+                    </ul>
+
+                    <h3>Controles de la partida</h3>
+                    <p>En la parte inferior de la pantalla encontrarás la siguiente información y controles:</p>
+                    <ul>
+                        <li><strong>Tiempo:</strong> Muestra el tiempo restante para tu turno (10 segundos).</li>
+                        <li><strong>Turno:</strong> Indica a qué jugador le toca mover (ej. "TURNO DE: JUGADOR AZUL").</li>
+                    </ul>
+                    
+                    <h4>Botones de control</h4>
+                    <ul>
+                        <li><strong>Deshacer último movimiento:</strong> Permite revertir tu última jugada.</li>
+                        <li><strong>Volver a repartir:</strong> Reinicia la posición de las fichas en el tablero, sin finalizar la partida.</li>
+                    </ul>
+                    <p>Además, el botón <strong>"Volver al menú principal"</strong> te permite salir del juego en cualquier momento.</p>
+
+                    <h3>Estrategia</h3>
+                    <p>
+                        El juego exige una combinación de estrategia y rapidez. El objetivo no es solo lograr tu propia línea, sino también anticipar y bloquear los movimientos del oponente para impedirle ganar primero.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+
+    <!-- Cambiar la ip por la local -->
+    <script src="main.js"></script>
+</body>
+</html>
